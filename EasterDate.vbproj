@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EasterDate</RootNamespace>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <Authors>Mikish</Authors>
+    <Product>EasterDate</Product>
+    <Description>A command-line executable returning the date of the next Easter at the command prompt. It also accepts multiple 4-digit Year arguments to return the date for specific years.
+
+Written in Visual Basic, this command can easily be built to run on Windows, Linux, or macOS.
+
+     Usage: EasterDate [####] [####]...
+
+	- EasterDate {returns the date of the next Easter}
+	- EasterDate 1953 {returns the date of Easter in 1953}
+	- EasterDate 1953 2000 2021 2022 4200 {returns the date of Easter for each argument passed}
+
+	Only years between 1 - 9999 will return dates, other arguments will return an error message.
+
+Please note that the Easter dates returned are for the Gregorian calendar which was not used before October 1582.		So people before 1583 would have celebrated Easter on the date returned converted to their Julian equivalent.</Description>
+    <Copyright>The Mikish Group</Copyright>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <StartupObject>Sub Main</StartupObject>
+    <ApplicationIcon>Commands.ico</ApplicationIcon>
+    <Company>The Mikish Group</Company>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageIcon></PackageIcon>
+    <PackageIconUrl />
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/MikishVaughn/EasterDate</RepositoryUrl>
+    <RepositoryType>local</RepositoryType>
+    <OptionExplicit>Off</OptionExplicit>
+    <Version>1.0.0</Version>
+    <PackageTags>v1.0.3</PackageTags>
+    <PackageProjectUrl>https://github.com/MikishVaughn/EasterDate</PackageProjectUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyName>EasterDate</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="My Project\**" />
+    <EmbeddedResource Remove="My Project\**" />
+    <None Remove="My Project\**" />
+    <None Include="LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+    <None Remove="Commands.ico" />
+    <None Remove="functions.ico" />
+    <None Remove="functions.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Holidays">
+      <HintPath>..\..\dll_files\Holidays\bin\Release\Holidays.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
